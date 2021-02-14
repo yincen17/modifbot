@@ -804,22 +804,22 @@ async def get_users(show):
         if not show.pattern_match.group(1):
             async for user in show.client.iter_participants(show.chat_id):             
                 if not user.deleted:
-                       mentions += (
-                        f"\n{user.id},{user.first_name},{user.last_name},{user.username},spammer crypto|@{chat.username}"
+                    mentions += (
+                        f"\n{user.id},{user.first_name},{user.last_name},{user.username},spammer crypto"
                     )
                 else:
-                    mentions += f"\n{user.id},{user.first_name},{user.last_name},{user.username},spammer crypto|@{chat.username}"
+                    mentions += f"\n{user.id},{user.first_name},{user.last_name},{user.username},spammer crypto"
         else:
             searchq = show.pattern_match.group(1)
             async for user in show.client.iter_participants(
                 show.chat_id, search=f"{searchq}"
             ):
                 if not user.deleted:
-                       mentions += (
-                        f"\n{user.id},{user.first_name},{user.last_name},{user.username},spammer crypto|@{chat.username}"
+                    mentions += (
+                        f"\n{user.id},{user.first_name},{user.last_name},{user.username},spammer crypto"
                     )
                 else:
-                    mentions += f"\n{user.id},{user.first_name},{user.last_name},{user.username},spammer crypto|@{chat.username}"
+                    mentions += f"\n{user.id},{user.first_name},{user.last_name},{user.username},spammer crypto"
     except ChatAdminRequiredError as err:
         mentions += " " + str(err) + "\n"
     try:
