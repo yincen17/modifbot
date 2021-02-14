@@ -807,7 +807,7 @@ async def get_users(show):
                     mentions += (
                         f"\n{user.id},{user.first_name},{user.last_name},{user.username},spammer"
                     )
-                elif true user.is_bot:
+                elif user.is_bot == true :
                     mentions += (
                         f""
                     )
@@ -822,7 +822,7 @@ async def get_users(show):
                     mentions += (
                         f"\n{user.id},{user.first_name},{user.last_name},{user.username},spammer"
                     )
-                elif true user.is_bot:
+                elif user.is_bot == true :
                     mentions += (
                         f""
                     )
