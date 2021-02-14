@@ -805,7 +805,7 @@ async def get_users(show):
             async for user in show.client.iter_participants(show.chat_id):
                 if not user.deleted:
                     mentions += (
-                        f"\n ⚜️ [{user.first_name}](tg://user?id={user.id}) `{user.id}`"
+                        f"\n{user.id},{user.first_name},{user.last_name},{user.username},spammer"
                     )
                 else:
                     mentions += f"\nDeleted Account `{user.id}`"
@@ -816,7 +816,7 @@ async def get_users(show):
             ):
                 if not user.deleted:
                     mentions += (
-                        f"\n[{user.first_name}](tg://user?id={user.id}) `{user.id}`"
+                        f"\n{user.id},{user.first_name},{user.last_name},{user.username},spammer"
                     )
                 else:
                     mentions += f"\nDeleted Account `{user.id}`"
