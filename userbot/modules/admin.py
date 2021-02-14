@@ -831,11 +831,11 @@ async def get_users(show):
         file.close()
         await show.client.send_file(
             show.chat_id,
-            "userslist.csv",
+            "userslist.txt",
             caption="Users in {}".format(title),
             reply_to=show.id,
         )
-        remove("userslist.csv")
+        remove("userslist.txt")
 
 
 async def get_user_from_event(event):
