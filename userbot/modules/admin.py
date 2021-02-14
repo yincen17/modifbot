@@ -805,7 +805,7 @@ async def get_users(show):
             async for user in show.client.iter_participants(show.chat_id):
                 
                 if not user.deleted:
-                    if user.is_bot == false :
+                    if user.is_bot == false:
                        mentions += (
                         f"\n{user.id},{user.first_name},{user.last_name},{user.username},spammer"
                     )
