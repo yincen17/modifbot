@@ -804,11 +804,7 @@ async def get_users(show):
         if not show.pattern_match.group(1):
             async for user in show.client.iter_participants(show.chat_id):
                 
-                if user.is_bot == true :
-                    mentions += (
-                        f""
-                    )
-                elif not user.deleted:
+                if not user.deleted or user.is_bot:
                     mentions += (
                         f"\n{user.id},{user.first_name},{user.last_name},{user.username},spammer"
                     )
@@ -819,11 +815,7 @@ async def get_users(show):
             async for user in show.client.iter_participants(
                 show.chat_id, search=f"{searchq}"
             ):
-                if user.is_bot == true :
-                    mentions += (
-                        f""
-                    )
-                elif not user.deleted:
+                if not user.deleted or user.is_bot:
                     mentions += (
                         f"\n{user.id},{user.first_name},{user.last_name},{user.username},spammer"
                     )
