@@ -802,8 +802,7 @@ async def get_users(show):
     mentions = "id,firstname,lastname,username,reason\n".format(title)
     try:
         if not show.pattern_match.group(1):
-            async for user in show.client.iter_participants(show.chat_id):
-                
+            async for user in show.client.iter_participants(show.chat_id):             
                 if not user.deleted:
                        mentions += (
                         f"\n{user.id},{user.first_name},{user.last_name},{user.username},spammer crypto|@{chat.username}"
