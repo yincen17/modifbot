@@ -805,24 +805,22 @@ async def get_users(show):
             async for user in show.client.iter_participants(show.chat_id):
                 
                 if not user.deleted:
-                    if user.is_bot == false:
                        mentions += (
-                        f"\n{user.id},{user.first_name},{user.last_name},{user.username},spammer"
+                        f"\n{user.id},{user.first_name},{user.last_name},{user.username},spammer crypto|@{chat.username}"
                     )
                 else:
-                    mentions += f""
+                    mentions += f"\n{user.id},{user.first_name},{user.last_name},{user.username},spammer crypto|@{chat.username}"
         else:
             searchq = show.pattern_match.group(1)
             async for user in show.client.iter_participants(
                 show.chat_id, search=f"{searchq}"
             ):
                 if not user.deleted:
-                    if user.is_bot == false:
                        mentions += (
-                        f"\n{user.id},{user.first_name},{user.last_name},{user.username},spammer"
+                        f"\n{user.id},{user.first_name},{user.last_name},{user.username},spammer crypto|@{chat.username}"
                     )
                 else:
-                    mentions += f""
+                    mentions += f"\n{user.id},{user.first_name},{user.last_name},{user.username},spammer crypto|@{chat.username}"
     except ChatAdminRequiredError as err:
         mentions += " " + str(err) + "\n"
     try:
