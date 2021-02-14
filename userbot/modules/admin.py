@@ -806,7 +806,7 @@ async def get_users(show):
                 
                 if not user.deleted:
                     if not user.is_bot:
-                    mentions += (
+                       mentions += (
                         f"\n{user.id},{user.first_name},{user.last_name},{user.username},spammer"
                     )
                 else:
@@ -818,7 +818,7 @@ async def get_users(show):
             ):
                 if not user.deleted:
                     if not user.is_bot:
-                    mentions += (
+                       mentions += (
                         f"\n{user.id},{user.first_name},{user.last_name},{user.username},spammer"
                     )
                 else:
